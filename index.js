@@ -6,12 +6,13 @@ import { bikeParking } from "./bikeParking";
 import { academics } from "./academics";
 import { athletics } from "./athletics";
 
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
+  var sidebarCollapse = document.getElementById("sidebarCollapse");
+  var sidebar = document.getElementById("sidebar");
 
-  $('#sidebarCollapse').on('click', function () {
-      $('#sidebar').toggleClass('active');
+  sidebarCollapse.addEventListener("click", function () {
+    sidebar.classList.toggle("active");
   });
-
 });
 
 // [START maps_map_simple]
