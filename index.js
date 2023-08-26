@@ -6,13 +6,13 @@ import { bikeParking } from "./bikeParking";
 import { academics } from "./academics";
 import { athletics } from "./athletics";
 
-$(document).ready(function () {
+// $(document).ready(function () {
 
-  $('#sidebarCollapse').on('click', function () {
-      $('#sidebar').toggleClass('active');
-  });
+//   $('#sidebarCollapse').on('click', function () {
+//       $('#sidebar').toggleClass('active');
+//   });
 
-});
+// });
 
 // [START maps_map_simple]
 let map;
