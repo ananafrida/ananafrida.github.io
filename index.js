@@ -1,15 +1,23 @@
+import { busStops } from "./busStops";
+import { parkingLots } from "./parkingLots";
+import { dining } from "./dining";
+import { compost } from "./compost";
+import { bikeParking } from "./bikeParking";
+import { academics } from "./academics";
+import { athletics } from "./athletics";
 
-// $(document).ready(function () {
+$(document).ready(function () {
 
-//   $('#sidebarCollapse').on('click', function () {
-//       $('#sidebar').toggleClass('active');
-//   });
+  $('#sidebarCollapse').on('click', function () {
+      $('#sidebar').toggleClass('active');
+  });
 
-// });
+});
 
 // [START maps_map_simple]
 let map;
 
+var markers = [];
 async function initMap() {
   
   const { Map } = await google.maps.importLibrary("maps");
@@ -22,6 +30,14 @@ async function initMap() {
     streetViewControl: false, 
     mapTypeControl: false,
   });
+
+  parkingLots(map, markers);
+  busStops(map, markers);
+  dining(map, markers);
+  compost(map, markers);
+  bikeParking(map, markers);
+  academics(map, markers);
+  athletics(map, markers);
 
 }
 initMap();
