@@ -1,5 +1,5 @@
 var markersmain = [];
-export function busStops(map, markers){
+export function compost(map, markers){
     const iconBase =
     "http://maps.google.com/mapfiles/kml/shapes/";
     const icons = {
@@ -19,25 +19,25 @@ export function busStops(map, markers){
         icon: iconBase + "dining_maps.png",
       },
     };
-    const busStops = [
+    const compost = [
         {
-          position: {lat: 41.558832, lng: -72.661057},
-          title: "Vine Street / Washington Street",
-          type: "bus",
+          position: {lat: 41.551806, lng: -72.656722},
+          title: "59 Home Ave. Compost",
+          type: "compost",
         },
         {
-          position: {lat: 41.560827, lng: -72.649256},
-          title: "Middletown Bus Terminal",
-          type: "bus",
+          position: {lat: 41.558017, lng: -72.654545},
+          title: "College of the Environment backyard Compost",
+          type: "compost",
         },
         {
-          position: {lat: 41.560586, lng: -72.655634},
-          title: "High Street / Washington Bus Stop",
-          type: "bus",
+          position: {lat: 41.559101, lng: -72.662018},
+          title: "Farm House Compost",
+          type: "compost",
         },
       ];
 
-      busStops.forEach(({position, title, type}, i) => {
+      compost.forEach(({position, title, type}, i) => {
         const marker = new google.maps.Marker({
         position: position,
         icon: icons[type].icon,
@@ -48,8 +48,8 @@ export function busStops(map, markers){
         });
         markersmain = markers;
         marker.setMap(null)
-        document.getElementById("busBtn").addEventListener("click", hideMarkers);
-        document.getElementById("busBtn").addEventListener("click", setMarker);
+        document.getElementById("compostBtn").addEventListener("click", hideMarkers);
+        document.getElementById("compostBtn").addEventListener("click", setMarker);
         function setMarker(){
           map.setZoom(15)
           map.setCenter({ lat: 41.556240724638144, lng: -72.65683037211356 })
