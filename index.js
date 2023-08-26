@@ -19,7 +19,7 @@ async function initMap() {
     zoom: 15,
     mapId: "c60343d395077993", 
     fullscreenControl: true,
-    streetViewControl: true, 
+    streetViewControl: false, 
     mapTypeControl: false,
   });
 

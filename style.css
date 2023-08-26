@@ -1,23 +1,283 @@
-/* 
- * Always set the map height explicitly to define the size of the div element
- * that contains the map. 
- */
- #map {
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+/*things personally added starts*/
+#map {
   height: 100%;
+  width:100%;
 }
 
+.bg-light {
+  background-color: #1A1919!important;
+}
+
+#sidebarCollapse:hover{
+  background-color: grey;
+}
+
+#sidebarCollapse{
+  background-color: #D72331;
+  color: #FFFFFE;
+  border-radius: .1rem;
+}
+
+button{
+  outline: none !important;
+  border: none !important;
+}
+
+.navbar{
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+#container{
+  width: 100%;
+  height: 91%;
+}
+
+/* li{
+  border-bottom: 0.01px solid black;
+} */
+
+/*things personally added ends*/
 /* 
  * Optional: Makes the sample page fill the window. 
  */
-html,
+/* html, 
 body {
-  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: #FFFFFE;
+} */
+
+/* * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  line-height: 1;
+} */
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+  font-family: 'Poppins', sans-serif;
+  background: #FFFFFE;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1em;
+    color: #FFFFFE;
+    align-content: center;
+    margin-top: 1rem;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  height:100vh;
+  /* align-items: stretch; */
+}
+
+#sidebar {
+    /* don't forget to add all the previously mentioned styles here too */
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    background: #FFFFFE;
+    color: #1A1919;
+    transition: all 0.3s;
+    z-index: 99999;
+}
+
+#sidebar.active {
+  margin-left: -250px;
+}
+
+/* #sidebar .sidebar-header {
+    padding: 20px;
+    background:greenyellow;
+} */
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebar ul p {
+    color: #1A1919;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    background: grey;
+}
+
+/* #sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #FFFFFE;
+} */
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    border-bottom: #1A1919;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+      margin-left: -250px;
+  }
+  #sidebar.active {
+      margin-left: 0;
+  }
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+/*modal styling starts here*/
+.open-modal {
+  background: #20c997;
+  color: #fff;
+  border: none;
+  padding: 20px 40px;
+  font-size: 48px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s;
+  outline: none;
+}
+.open-modal:active {
+  transform: translateY(-17px);
+}
+.academics-modal-content,.parking-modal-content {
+	width:30%;
+  max-width: 100%;
+  min-width: 30%;
+  max-height: 100%;
+	margin-left:auto;
+	margin-right:auto;
+	padding: 5px;
+	border: thin #000 solid;
+	background-color: #FFFFFE;
+	z-index:3; /* places the modal dialog on top of everything else */
+	position:fixed;
+	top:20%;
+	right:0;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0px;
+  color: #000;
+  font-size: 20px;
+  padding-left: 0px;
+  padding-bottom: 1px;
+  padding-right: 0px;
+  padding-top: 0px;
+  /* padding-bottom: 1px; */
+}
+
+.academics-close-modal, .parking-close-modal {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 20px;
+  font-size: 20px;
+}
+
+.parking-close-modal:hover, .academics-close-modal:hover {
+  color: #fa5252;
+}
+
+.modal-body p {
+  font-size: 15px;
+  line-height: 1.5;
+  color:#1A1919;
+}
+
+.hidden-modal {
+  display: none;
+}
+
+/*modal styling ends here*/
+parking-modal-content, .modal-body img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 0.3rem;
+  border: 1px solid;
+}
+
+.modal-guts {
+
+  /* other stuff we already covered */
+
+  /* cover the modal */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* spacing as needed */
+  padding: 20px 50px 20px 20px;
+
+  /* let it scroll */
+  overflow: auto;
+  
 }
 
 
 
+@media screen and (min-width: 601px) {
+  h3 {
+      font-size: 20px;
+  }
+  .parking-close-modal, academics-close-modal{
+    font-size: 20px;
+  }
+  .modal-body p {
+  font-size: 15px;
+  line-height: 1.5;
+  color:#1A1919;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  h3 {
+      font-size: 10px;
+  }
+  .parking-close-modal, academics-close-modal{
+    font-size: 15px;
+  }
+  .modal-body p {
+    font-size: 5px;
+    line-height: 1.5;
+    color: #1A1919;
+  }
+}
 
 
 
