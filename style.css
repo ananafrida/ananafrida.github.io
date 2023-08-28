@@ -99,7 +99,7 @@ a, a:hover, a:focus {
     background: #FFFFFE;
     color: #1A1919;
     transition: all 0.3s;
-    z-index: 3;
+    /* z-index: 3; */
 }
 
 #sidebar.active {
