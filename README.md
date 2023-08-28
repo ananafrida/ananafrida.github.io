@@ -1,17 +1,6 @@
-# Google Maps JavaScript Sample
+# Wesleyan Campus Map
 
-This sample is generated from @googlemaps/js-samples located at
-https://github.com/googlemaps/js-samples.
+This map is deployed at Netlify located at
+[https://github.com/googlemaps/js-samples.](https://animated-semolina-5e423f.netlify.app)
 
-## Setup
-
-```sh
-npm i
-npm start  # development
-npm run build  # production
-```
-
-## Feedback
-
-For feedback related to this sample, please open a new issue on
-[GitHub](https://github.com/googlemaps/js-samples/issues).
+This is Wesleyan University's campus map built using Google Map API, mapIDs, and custom Google Map markers. The backend is yet to be done...
