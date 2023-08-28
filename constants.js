@@ -28,6 +28,7 @@ export const PARKING = [
     type: "parking",
     pic:"	https://map.wesleyan.edu/location_img/esc4cL4HxSKwv17kKyCCFxkKRXfFG6Bd2r1aC9Ck.jpeg",
     description: "The Center for Film Studies features state-of-the-art screening facilities and a nationally recognized faculty. The Center includes the 412-seat Goldsmith Family Cinema and production facilities for virtual, digital, and 16mm filmmaking formats.",
+    link: "https://www.google.com/maps/place/41.5585268,-72.6584450",
   },
   {
     position: {lat: 41.558527, lng: -72.658445},
@@ -35,6 +36,7 @@ export const PARKING = [
     type: "parking",
     pic: "https://map.wesleyan.edu/location_img/esc4cL4HxSKwv17kKyCCFxkKRXfFG6Bd2r1aC9Ck.jpeg",
     description: "The Center for Film Studies features state-of-the-art screening facilities and a nationally recognized faculty. The Center includes the 412-seat Goldsmith Family Cinema and production facilities for virtual, digital, and 16mm filmmaking formats.",
+    link: "https://www.google.com/maps/place/41.5585268,-72.6584450",
   },
   // {
   //   position: {lat: 41.558647, lng: -72.655639},
@@ -125,6 +127,7 @@ export const ACADEMICS = [
       type: "academics",
       pic:"	https://map.wesleyan.edu/location_img/esc4cL4HxSKwv17kKyCCFxkKRXfFG6Bd2r1aC9Ck.jpeg",
       description: "The Center for Film Studies features state-of-the-art screening facilities and a nationally recognized faculty. The Center includes the 412-seat Goldsmith Family Cinema and production facilities for virtual, digital, and 16mm filmmaking formats.",
+      link: "https://goo.gl/maps/cQ4GuszzbYwFD1VF9",
     },
     {
       position: {lat: 41.558017, lng: -72.654545},
@@ -132,6 +135,7 @@ export const ACADEMICS = [
       type: "academics",
       pic:"	https://map.wesleyan.edu/location_img/esc4cL4HxSKwv17kKyCCFxkKRXfFG6Bd2r1aC9Ck.jpeg",
       description: "The Center for Film Studies features state-of-the-art screening facilities and a nationally recognized faculty. The Center includes the 412-seat Goldsmith Family Cinema and production facilities for virtual, digital, and 16mm filmmaking formats.",
+      link: "https://goo.gl/maps/cQ4GuszzbYwFD1VF9",
     },
     {
       position: {lat: 41.559101, lng: -72.662018},
@@ -139,5 +143,6 @@ export const ACADEMICS = [
       type: "academics",
       pic:"	https://map.wesleyan.edu/location_img/esc4cL4HxSKwv17kKyCCFxkKRXfFG6Bd2r1aC9Ck.jpeg",
       description: "The Center for Film Studies features state-of-the-art screening facilities and a nationally recognized faculty. The Center includes the 412-seat Goldsmith Family Cinema and production facilities for virtual, digital, and 16mm filmmaking formats.",
+      link: "https://goo.gl/maps/ZUL2SfGHteyfz39R8",
     },
   ];
