@@ -1,10 +1,10 @@
-import { PARKING, icons } from "./constants";
+import { ACADEMICS, icons } from "./constants.js";
 
 var markersmain = [];
 let text = "Google Maps";
-export function parkingLots(map, markers){
-    let modalContent = document.querySelector(".parking-modal-content");
-    let closeModal = document.querySelector(".parking-close-modal");
+export function academics(map, markers){
+    let modalContent = document.querySelector(".academics-modal-content");
+    let closeModal = document.querySelector(".academics-close-modal");
     let overlay = document.querySelector(".overlay");
     const close = function(){
       modalContent.classList.add("hidden-modal")
@@ -12,8 +12,8 @@ export function parkingLots(map, markers){
       map.setZoom(15)
       map.setCenter({ lat: 41.556240724638144, lng: -72.65683037211356 })
     };
+      ACADEMICS.forEach(({position, title, type, pic, description, link}, i) => {
 
-      PARKING.forEach(({position, title, type, pic, description, link}, i) => {
         const marker = new google.maps.Marker({
         position: position,
         icon: icons[type].icon,
@@ -23,10 +23,10 @@ export function parkingLots(map, markers){
           map.setCenter(marker.getPosition());
           modalContent.classList.remove("hidden-modal");
           overlay.classList.remove("hidden-modal");
-          document.getElementById("parking-header").innerHTML = title;
-          document.getElementById("parking-desc").innerHTML = description;
-          document.getElementById("parking-img").src = pic;
-          document.getElementById("parking-maps").innerHTML = text.link(link);
+          document.getElementById("academics-header").innerHTML = title;
+          document.getElementById("academics-desc").innerHTML = description;
+          document.getElementById("academics-img").src = pic;
+          document.getElementById("academic-maps").innerHTML = text.link(link);
         });
         /*modal closing*/
         closeModal.addEventListener("click", close);
@@ -34,8 +34,8 @@ export function parkingLots(map, markers){
         overlay.addEventListener("click", close);
         markersmain = markers;
         marker.setMap(null)
-        document.getElementById("parkingBtn").addEventListener("click", hideMarkers);
-        document.getElementById("parkingBtn").addEventListener("click", setMarker);
+        document.getElementById("academicsBtn").addEventListener("click", hideMarkers);
+        document.getElementById("academicsBtn").addEventListener("click", setMarker);
         function setMarker(){
           map.setZoom(15)
           map.setCenter({ lat: 41.556240724638144, lng: -72.65683037211356 })
