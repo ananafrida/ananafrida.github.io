@@ -1,27 +1,22 @@
-// const express = require('express')
-// const mongoose = require('mongoose');
-// const path = require('path');
+
 import express from 'express';
 import mongoose from 'mongoose';
-import path,{dirname} from 'path';
-import { fileURLToPath } from 'url';
-
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import path from 'path';
+import * as dotenv from "dotenv";
+import process from 'process';
+dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(express.static('client/public'))
+app.use(express.static('client/dist'))
 const port = process.env.PORT || 3000;
 
 
 const database = {  
   cord: [
-        { x: 1, y: 40.2 },
-        { x: 1, y: 20.2 },
-        { x: 1, y: 30.2 }, 
-        { x: 1, y: 70.2 }
-      ] 
+    {x: 41.561280, y: -72.656197},
+    {x: 41.558527, y: -72.658445},
+    ] 
   }
 
 // CRUD
@@ -54,7 +49,7 @@ async function deleteCord(key,index) {
 }
 //TODO add authentiction middleware
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/client/index.html'));
+  res.sendFile(path.join(process.cwd(), '/dist/index.html'));
 });
 app.get('/api', async(req, res) => {
   const data = await getCorordinateByIndex("cord",0);

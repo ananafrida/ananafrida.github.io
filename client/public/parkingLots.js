@@ -2,7 +2,7 @@ import { PARKING, icons } from "./constants.js";
 
 var markersmain = [];
 let text = "Google Maps";
-export function parkingLots(map, markers){
+export async function parkingLots(map, markers){
     let modalContent = document.querySelector(".parking-modal-content");
     let closeModal = document.querySelector(".parking-close-modal");
     let overlay = document.querySelector(".overlay");
@@ -13,9 +13,19 @@ export function parkingLots(map, markers){
       map.setCenter({ lat: 41.556240724638144, lng: -72.65683037211356 })
     };
 
+      const response  = await fetch("/api/all").then(res=> res.json()).catch(console.error);
+      const data = response?.data
+      console.log(data);
       PARKING.forEach(({position, title, type, pic, description, link}, i) => {
+        if(!data?.[i]) {
+          console.log("NO data found for", title, i);
+          return;
+        }
         const marker = new google.maps.Marker({
-        position: position,
+        position: {
+          lat: data[i].x,
+          lng: data[i].y,
+        },
         icon: icons[type].icon,
         });
         marker.addListener("click", () => {
