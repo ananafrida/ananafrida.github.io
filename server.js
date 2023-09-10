@@ -49,7 +49,7 @@ async function deleteCord(key,index) {
 }
 //TODO add authentiction middleware
 app.get('/', (req, res) => {
-  res.sendFile(path.join(process.cwd(), '/dist/index.html'));
+  res.sendFile(path.join(process.cwd(), '/client/index.html'));
 });
 app.get('/api', async(req, res) => {
   const data = await getCorordinateByIndex("cord",0);
